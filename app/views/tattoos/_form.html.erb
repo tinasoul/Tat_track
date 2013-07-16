@@ -1,9 +1,9 @@
-<%= form_for(@tatoo, :html => {:multipart => true}) do |f| %>
-  <% if @tatoo.errors.any? %>
+<%= form_for(@tattoo, :html => {:multipart => true}) do |f| %>
+  <% if @tattoo.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tatoo.errors.count, "error") %> prohibited this tatoo from being saved:</h2>
+      <h2><%= pluralize(@tattoo.errors.count, "error") %>This tat can't be saved:</h2>
       <ul>
-      <% @tatoo.errors.full_messages.each do |msg| %>
+      <% @tattoo.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -16,11 +16,11 @@
   </div>
   <div class="field">
     <%= f.label :inspiration %><br />
-    <%= f.text_area :inspiration %>
+    <%= f.text_area :inspiration, :placeholder => "Share your story" %>
   </div>
   <div class="field">
     <%= f.label :location_on_body %><br />
-    <%= f.text_area :location_on_body %>
+    <%= f.text_field :location_on_body %>
   </div>
   <div class="field">
     <%= f.label :date_started %><dr />

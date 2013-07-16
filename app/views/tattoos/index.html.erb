@@ -1,2 +1,78 @@
-<h1>Tattoos#index</h1>
-<p>Find me in app/views/tattoos/index.html.erb</p>
+
+<h1>Add Your Tat</h1>
+
+<table>
+  <tr>
+    <th>Pic</th>
+    <th>Inspiration</th>
+    <th>Location on body</th>
+    <th>Date started</th>
+    <th>Date completed</th>
+    <th>Hours Spent</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tattoos.each do |tattoo| %>
+  <tr>
+    <td><%= tattoo.pic %></td>
+    <td><%= tattoo.location_on_body %></td>
+    <td><%= tattoo.date_started %></td>
+    <td><%= tattoo.date_completed %></td>
+    <td><%= tattoo.hours_spent %></td>
+    <td><%= link_to 'Show', tattoo %></td>
+    <td><%= link_to 'Edit', edit_tattoo_path(book) %></td>
+    <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New tattoo', new_tattoo_path %>
+
+%td= tattoo.pic 
+      %td= tattoo.inspiration 
+      %td= tattoo.location_on_body 
+      %td= tattoo.date_started
+      %td= tattoo.date_completed
+      %td= tattoo.hours_spent
+      %td= link_to 'Show', tattoo 
+      %td= link_to 'Edit', edit_tattoo_path 
+      %td= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure? This does not delete the tat in real life.' }
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>
+
+
+<!-- HAML CONVERSION
+
+%h1 Add Your Tat
+
+%table
+  %tr
+    %th Pic
+    %th Inspiration
+    %th Location on body
+    %th Date started
+    %th Date completed
+    %th Hours spent in chair
+    %th
+    %th
+  
+
+  -@tattoos.each do |tattoo| 
+    %tr
+      %td= tattoo.pic 
+      %td= tattoo.inspiration 
+      %td= tattoo.location_on_body 
+      %td= tattoo.date_started
+      %td= tattoo.date_completed
+      %td= tattoo.hours_spent
+      %td= link_to 'Show', tattoo 
+      %td= link_to 'Edit', edit_tattoo_path 
+      %td= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure? This does not delete the tat in real life.' } 
+ 
+= link_to 'Add A Tat', new_tattoo_path  -->
