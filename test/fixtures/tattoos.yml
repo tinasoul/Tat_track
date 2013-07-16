@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  inspiration: MyText
+  location_on_body: MyString
+  date_started: 2013-07-15
+  date_completed: 2013-07-15
+  hours_spent: 2013-07-15 21:09:37
+  owner_id: 1
+  artist_id: 1
+
+two:
+  inspiration: MyText
+  location_on_body: MyString
+  date_started: 2013-07-15
+  date_completed: 2013-07-15
+  hours_spent: 2013-07-15 21:09:37
+  owner_id: 1
+  artist_id: 1

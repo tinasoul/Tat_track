@@ -1,7 +1,10 @@
 TatTrack::Application.routes.draw do
+ 
   devise_for :users
 
   root :to => 'pages#home'
+
+  resources :tattoos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

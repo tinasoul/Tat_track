@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716012522) do
+ActiveRecord::Schema.define(:version => 20130716020937) do
+
+  create_table "tattoos", :force => true do |t|
+    t.text     "inspiration"
+    t.string   "location_on_body"
+    t.date     "date_started"
+    t.date     "date_completed"
+    t.time     "hours_spent"
+    t.integer  "owner_id"
+    t.integer  "artist_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
