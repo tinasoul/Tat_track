@@ -1,1 +1,40 @@
-_form.html.erb
+<%= form_for(@tatoo, :html => {:multipart => true}) do |f| %>
+  <% if @tatoo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tatoo.errors.count, "error") %> prohibited this tatoo from being saved:</h2>
+      <ul>
+      <% @tatoo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pic %><br />
+    <%= f.file_field :pic %>
+  </div>
+  <div class="field">
+    <%= f.label :inspiration %><br />
+    <%= f.text_area :inspiration %>
+  </div>
+  <div class="field">
+    <%= f.label :location_on_body %><br />
+    <%= f.text_area :location_on_body %>
+  </div>
+  <div class="field">
+    <%= f.label :date_started %><dr />
+    <%= f.date_select :date_started%>
+  </div>
+  <div class="field">
+    <%= f.label :date_completed %><dr />
+    <%= f.date_select :date_completed%>
+  </div>
+  <div class="field">
+    <%= f.label :hours_spent %><br />
+    <%= f.text_field :hours_spent %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
