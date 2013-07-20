@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
+ <head>
   <title>TatTrack</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
-</head>
-<body>
+ </head>
+
+ <body>
+
+  <div class="heading">
+     <!--  <h1 id="title">TatTrack</h1> -->
   <% if current_user.present? %>
     <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
   <% else %>
@@ -16,8 +22,9 @@
 
 <%= yield %>
 
-<p class="notice"></p>
-<p class="alert"></p>
+ <p class="notice"></p>
+ <p class="alert"></p>
 
-</body>
+ </div>
+ </body>
 </html>

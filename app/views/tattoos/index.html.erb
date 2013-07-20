@@ -1,5 +1,4 @@
-
-<h1>Add Your Tat</h1>
+<h1>TatTrack</h1>
 
 <table>
   <tr>
@@ -16,63 +15,18 @@
 
 <% @tattoos.each do |tattoo| %>
   <tr>
-    <td><%= tattoo.pic %></td>
+    <td width="50px"><%=image_tag(tattoo.pic_url) if tattoo.pic.present?%></td>
     <td><%= tattoo.location_on_body %></td>
     <td><%= tattoo.date_started %></td>
     <td><%= tattoo.date_completed %></td>
     <td><%= tattoo.hours_spent %></td>
-    <td><%= link_to 'Show', tattoo %></td>
-    <td><%= link_to 'Edit', edit_tattoo_path(book) %></td>
-    <td><%= link_to 'Destroy', tattoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= ilink_to 'eye-open','', tattoo %> | <%= ilink_to 'pencil','', edit_tattoo_path(tattoo) %> | <%= ilink_to 'trash','', tattoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
-<% end %>
+<% end %> 
 </table>
 
-<br />
+<br/>
 
-<%= link_to 'New tattoo', new_tattoo_path %>
-
-%td= tattoo.pic 
-      %td= tattoo.inspiration 
-      %td= tattoo.location_on_body 
-      %td= tattoo.date_started
-      %td= tattoo.date_completed
-      %td= tattoo.hours_spent
-      %td= link_to 'Show', tattoo 
-      %td= link_to 'Edit', edit_tattoo_path 
-      %td= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure? This does not delete the tat in real life.' }
-
-<br />
-
-<%= link_to 'New Book', new_book_path %>
+<%= ilink_to 'plus', 'New Book', new_tattoo_path %>
 
 
-<!-- HAML CONVERSION
-
-%h1 Add Your Tat
-
-%table
-  %tr
-    %th Pic
-    %th Inspiration
-    %th Location on body
-    %th Date started
-    %th Date completed
-    %th Hours spent in chair
-    %th
-    %th
-  
-
-  -@tattoos.each do |tattoo| 
-    %tr
-      %td= tattoo.pic 
-      %td= tattoo.inspiration 
-      %td= tattoo.location_on_body 
-      %td= tattoo.date_started
-      %td= tattoo.date_completed
-      %td= tattoo.hours_spent
-      %td= link_to 'Show', tattoo 
-      %td= link_to 'Edit', edit_tattoo_path 
-      %td= link_to 'Delete', tattoo, method: :delete, data: { confirm: 'Are you sure? This does not delete the tat in real life.' } 
- 
-= link_to 'Add A Tat', new_tattoo_path  -->

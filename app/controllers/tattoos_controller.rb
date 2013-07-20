@@ -36,7 +36,7 @@ class TattoosController < ApplicationController
 
     respond_to do |format|
       if @tattoo.save
-        format.html { redirect_to @tattoo, notice: 'Your tattoo was saved to tat_tracker!' }
+        format.html { redirect_to @tattoo, notice: 'Your tat was saved to TatTrack!' }
         format.json { render json: @tattoo, status: :created, location: @tattoo }
       else
         format.html { render action: "new" }
@@ -50,7 +50,7 @@ class TattoosController < ApplicationController
 
     respond_to do |format|
       if @tattoo.update_attributes(params[:tattoo])
-        format.html { redirect_to @tattoo, notice: 'Tat tracker was successfully updated.' }
+        format.html { redirect_to @tattoo, notice: 'TatTrack was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

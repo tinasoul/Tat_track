@@ -1,2 +1,37 @@
-<h1>Tattoos#show</h1>
-<p>Find me in app/views/tattoos/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pic:</b>
+  <%=image_tag(@tattoo.pic_url) if @tattoo.pic.present? %>
+</p>
+
+<p>
+  <b>Inspiration:</b>
+  <%= @tattoo.inspiration %>
+</p>
+
+<p>
+  <b>Location on Body</b>
+  <%= @tattoo.location_on_body %>
+</p>
+
+<p>
+  <b>Date Started</b>
+  <%= @tattoo.date_started %>
+</p>
+
+<p>
+  <b>Date Completed</b>
+  <%= @tattoo.date_completed %>
+</p>
+
+<p>
+  <b>Hours spent</b>
+  <%= @tattoo.hours_spent %>
+</p>
+
+
+<%= ilink_to 'pencil','Edit', edit_tattoo_path %> |
+<%= ilink_to 'chevron-left','Back', tattoos_path %>
+
+
