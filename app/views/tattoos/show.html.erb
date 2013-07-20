@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Owner:</b>
+  <%= @tattoo.owner_id %>
+</p>
+
+
+<p>
   <b>Pic:</b>
   <%=image_tag(@tattoo.pic_url) if @tattoo.pic.present? %>
 </p>
