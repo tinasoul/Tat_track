@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :email, :role, :username
 
-  has_many :links
+  has_many :tattoos
 end

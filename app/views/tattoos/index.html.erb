@@ -1,5 +1,3 @@
-<h1>TatTrack</h1>
-
 <table>
   <tr>
     <th>Pic</th>
@@ -15,7 +13,8 @@
 
 <% @tattoos.each do |tattoo| %>
   <tr>
-    <td width="50px"><%=image_tag(tattoo.pic_url) if tattoo.pic.present?%></td>
+    <td width="200px"><%=image_tag(tattoo.pic_url) if tattoo.pic.present?%></td>
+    <td><%= tattoo.inspiration %></td>
     <td><%= tattoo.location_on_body %></td>
     <td><%= tattoo.date_started %></td>
     <td><%= tattoo.date_completed %></td>
@@ -27,6 +26,6 @@
 
 <br/>
 
-<%= ilink_to 'plus', 'New Book', new_tattoo_path %>
+<%= ilink_to 'plus', 'New Tat', new_tattoo_path %>
 
 
