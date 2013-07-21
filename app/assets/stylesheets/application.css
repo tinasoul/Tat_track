@@ -12,9 +12,9 @@
  *= require_tree .
  */
 
-@import 'twitter/bootstrap';
+/*@import 'twitter/bootstrap';
 @import 'font-awesome/font-awesome';
-@import 'font-awesome/font-awesome-ie7';
+@import 'font-awesome/font-awesome-ie7';*/
 
 body {
   font-family: enagagement;
